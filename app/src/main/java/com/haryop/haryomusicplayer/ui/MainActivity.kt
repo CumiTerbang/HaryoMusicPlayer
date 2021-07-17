@@ -1,7 +1,8 @@
-package com.haryop.haryomusicplayer
+package com.haryop.haryomusicplayer.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.haryop.haryomusicplayer.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
