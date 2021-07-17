@@ -1,0 +1,2 @@
+rootProject.name = "Haryo Music Player"
+include ':app'
