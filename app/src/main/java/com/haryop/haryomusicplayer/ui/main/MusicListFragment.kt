@@ -4,15 +4,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.os.bundleOf
+import androidx.fragment.app.add
+import androidx.fragment.app.commit
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.haryop.haryomusicplayer.R
+import com.haryop.haryomusicplayer.data.entities.ContentEntity
 import com.haryop.haryomusicplayer.databinding.FragmentMainBinding
+import com.haryop.haryomusicplayer.ui.PlayerFragment
 import com.haryop.mynewsportal.utils.Resource
 import com.haryop.synpulsefrontendchallenge.ui.companylist.MusicListAdapter
 import com.haryop.synpulsefrontendchallenge.utils.BaseFragmentBinding
-import com.haryop.synpulsefrontendchallenge.utils.comingSoon
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
@@ -30,6 +34,8 @@ class MusicListFragment : BaseFragmentBinding<FragmentMainBinding>(),
 
     var query = ""
     fun onReSearch(_query: String) = with(viewbinding) {
+        stopPlayer()
+
         query = _query
 
         adapter.getItems().clear()
@@ -94,20 +100,65 @@ class MusicListFragment : BaseFragmentBinding<FragmentMainBinding>(),
 
     }
 
-    override fun onClickedItem(preview_url: String, isStreamable: Boolean, isPlaying: Boolean) {
-        if (isStreamable == false) {
-            comingSoon("\nPreview Not Availalble")
-        } else if (isPlaying) {
-            comingSoon("\nPlay Track")
-        } else {
-            comingSoon("\nStop Track")
+    override fun onClickedItem(
+        preview_url: String,
+        artist_name: String,
+        track_name: String,
+        isStreamable: Boolean,
+        isPlaying: Boolean,
+        position: Int
+    ) {
+        var items = adapter.getItems()
+        for (item in items) {
+            if (item is ContentEntity) {
+                item.isPlaying = false
+            }
         }
 
+        (items[position] as ContentEntity).isPlaying = isPlaying
+
         adapter.notifyDataSetChanged()
+
+        stopPlayer()
+        if (isPlaying) {
+            showPlayer(preview_url, artist_name, track_name)
+        }
+
     }
 
     override fun onRefresh() {
         onReSearch(query)
     }
 
+    fun showPlayer(media_url: String, artist_name: String, track_name: String) = with(viewbinding) {
+        val bundle = bundleOf(
+            "media_url" to media_url,
+            "artist_name" to artist_name,
+            "track_name" to track_name
+        )
+        for (fragment in childFragmentManager.getFragments()) {
+            childFragmentManager.beginTransaction().remove(fragment).commit()
+        }
+        playerContainer.removeAllViews()
+
+        childFragmentManager.commit {
+            setReorderingAllowed(true)
+            add<PlayerFragment>(R.id.playerContainer, args = bundle)
+        }
+        playerContainer.visibility = View.VISIBLE
+    }
+
+    fun stopPlayer() = with(viewbinding) {
+        for (fragment in childFragmentManager.getFragments()) {
+            childFragmentManager.beginTransaction().remove(fragment).commit()
+        }
+        playerContainer.removeAllViews()
+        playerContainer.visibility = View.GONE
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        stopPlayer()
+    }
 }

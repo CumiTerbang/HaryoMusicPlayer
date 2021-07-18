@@ -13,7 +13,7 @@ class MusicItemViewHolder(
 ) :
     RecyclerView.ViewHolder(itemBinding.root) {
 
-    fun bind(item: ContentEntity) = with(itemBinding) {
+    fun bind(item: ContentEntity, position: Int) = with(itemBinding) {
         title.text = item.trackName
         artist.text = item.artistName
         album.text = item.collectionName
@@ -35,7 +35,14 @@ class MusicItemViewHolder(
                 }
             }
             onIsPlaying(item.isPlaying)
-            listener.onClickedItem(item.previewUrl, item.isStreamable, item.isPlaying)
+            listener.onClickedItem(
+                item.previewUrl,
+                item.artistName,
+                item.trackName,
+                item.isStreamable,
+                item.isPlaying,
+                position
+            )
 
         }
 

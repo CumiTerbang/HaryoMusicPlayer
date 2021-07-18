@@ -17,6 +17,7 @@
     <color name="list_line_color">#656565</color>
     <color name="list_expand_color">#ECECEC</color>
 
+    <color name="alpha_black">#CC000000</color>
     <color name="red">#C80E00</color>
     <color name="red_dark">#970B00</color>
     <color name="yellow">#FFEB3B</color>

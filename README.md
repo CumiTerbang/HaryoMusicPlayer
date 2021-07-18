@@ -2,7 +2,7 @@
 
 <img src="https://github.com/CumiTerbang/HaryoMusicPlayer/blob/master/readme_assets/screenshot_1.jpg" width="200" height="355,56"> <img src="https://github.com/CumiTerbang/HaryoMusicPlayer/blob/master/readme_assets/screenshot_2.jpg" width="200" height="355,56"> <img src="https://github.com/CumiTerbang/HaryoMusicPlayer/blob/master/readme_assets/screenshot_3.jpg" width="200" height="355,56">
 
-an android app demo to search your favorite music tracks, artists and albums using API from  [iTunes Search API](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api)
+an android app demo to search your favorite music tracks, artists and albums using API from  [iTunes affiliate API](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api)
 
 this is my approach for Fita/Kuncie Telkomsel Technical Test by making an android application based on the requirement as the solution
 
@@ -34,4 +34,4 @@ This project is using MVVM design pattern. The project directory consist of 4 di
 1. **data**: The M (Model) in MVVM. Where we perform data operations.
 2. **di**: Dependency Injection directory with the help of Hilt.
 3. **ui**: User Interface directory for Fragments and ViewModels helping to display data to the user.
-4. **util**: Urilities directory for helper classes and functions.
+4. **utils**: Urilities directory for helper classes and functions.
