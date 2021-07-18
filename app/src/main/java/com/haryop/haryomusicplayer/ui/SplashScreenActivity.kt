@@ -4,6 +4,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import com.haryop.haryomusicplayer.databinding.ActivitySplashScreenBinding
+import com.haryop.haryomusicplayer.ui.main.MainActivity
 import com.haryop.synpulsefrontendchallenge.utils.BaseActivityBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

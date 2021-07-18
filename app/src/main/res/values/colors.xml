@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">@color/peach</color>
-    <color name="colorPrimaryVariant">@color/peach_dark</color>
+    <color name="colorPrimary">@color/red</color>
+    <color name="colorPrimaryVariant">@color/red_dark</color>
     <color name="colorOnPrimary">@color/teal_200</color>
 
     <color name="colorOnPrimaryNight">#272727</color>
@@ -17,8 +17,8 @@
     <color name="list_line_color">#656565</color>
     <color name="list_expand_color">#ECECEC</color>
 
-    <color name="peach">#FF6D62</color>
-    <color name="peach_dark">#C5564E</color>
+    <color name="red">#C80E00</color>
+    <color name="red_dark">#970B00</color>
     <color name="yellow">#FFEB3B</color>
     <color name="yellow_dark">#FFC107</color>
 </resources>

@@ -3,6 +3,7 @@ package com.haryop.synpulsefrontendchallenge.utils
 
 import android.app.Activity
 import android.content.Context
+import android.os.Build
 import android.view.Gravity
 import android.view.View
 import android.view.inputmethod.InputMethodManager
@@ -32,8 +33,10 @@ fun Context.hideKeyboard(view: View) {
 
 fun Context.comingSoon(activity: Activity, msg: String = "") {
     val toast = Toast.makeText(activity, "COMING SOON${msg}", Toast.LENGTH_SHORT)
-    val v = toast.view!!.findViewById<View>(R.id.message) as TextView
-    if (v != null) v.gravity = Gravity.CENTER
+//    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) {
+//        val v = toast.view!!.findViewById<View>(R.id.message) as TextView
+//        if (v != null) v.gravity = Gravity.CENTER
+//    }
     toast.show()
 
 }
