@@ -8,7 +8,6 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.haryop.haryomusicplayer.R
-import com.haryop.haryomusicplayer.data.entities.ContentEntity
 import com.haryop.haryomusicplayer.databinding.FragmentMainBinding
 import com.haryop.mynewsportal.utils.Resource
 import com.haryop.synpulsefrontendchallenge.ui.companylist.MusicListAdapter
@@ -53,12 +52,20 @@ class MusicListFragment : BaseFragmentBinding<FragmentMainBinding>(),
     private fun onSearchContentObserver() = with(viewbinding) {
         viewModel.getSearchContent.observe(viewLifecycleOwner, {
 
+            welcome.visibility = View.GONE
+
             when (it.status) {
                 Resource.Status.SUCCESS -> {
                     foundLabel.visibility = View.VISIBLE
                     swipeContainer.isRefreshing = false
                     if (!it.data.isNullOrEmpty()) {
-                        foundLabel.setText(resources.getString(R.string.found_label, ""+it.data.size, query))
+                        foundLabel.setText(
+                            resources.getString(
+                                R.string.found_label,
+                                "" + it.data.size,
+                                query
+                            )
+                        )
 
                         var items = ArrayList<Any>()
                         items.addAll(ArrayList(it.data))
@@ -88,11 +95,11 @@ class MusicListFragment : BaseFragmentBinding<FragmentMainBinding>(),
     }
 
     override fun onClickedItem(preview_url: String, isStreamable: Boolean, isPlaying: Boolean) {
-        if(isStreamable==false) {
+        if (isStreamable == false) {
             comingSoon("\nPreview Not Availalble")
-        }else if(isPlaying){
+        } else if (isPlaying) {
             comingSoon("\nPlay Track")
-        }else{
+        } else {
             comingSoon("\nStop Track")
         }
 

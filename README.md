@@ -2,11 +2,11 @@
 
 <img src="https://github.com/CumiTerbang/HaryoMusicPlayer/blob/master/readme_assets/screenshot_1.jpg" width="200" height="355,56"> <img src="https://github.com/CumiTerbang/HaryoMusicPlayer/blob/master/readme_assets/screenshot_2.jpg" width="200" height="355,56"> <img src="https://github.com/CumiTerbang/HaryoMusicPlayer/blob/master/readme_assets/screenshot_3.jpg" width="200" height="355,56">
 
-an android app demo to browse and read international news articles using API from  [newsapi.org](https://newsapi.org/)
+an android app demo to search your favorite music tracks, artists and albums using API from  [iTunes Search API](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api)
 
-this is my approach for Fita/Kuncie Telkomsel Technical Test provided by HuntHire by making an android application based on the requirement as the solution
+this is my approach for Fita/Kuncie Telkomsel Technical Test by making an android application based on the requirement as the solution
 
-Click [here](https://drive.google.com/file/d/1hfTtxqt7IB4BPQDB1EKHBLWP8oVY6gad/view?usp=sharing) to download the app
+Click [here](https://drive.google.com/file/d/17NFtjAtwm5G8Pc26ZhVRboN2BwoAMX0C/view?usp=sharing) to download the app
 
 
 ## Features
@@ -26,10 +26,8 @@ Click [here](https://drive.google.com/file/d/1hfTtxqt7IB4BPQDB1EKHBLWP8oVY6gad/v
     - Open your Android Studio
     - New -> Project from Version Control..
     - Paste the url, click OK
-2. Replace demo api key with your [newsapi.org](newsapi.org) api key [here](https://github.com/CumiTerbang/MyNewsPortal/tree/master/app/src/main/java/com/haryop/mynewsportal/utils/ConstantsObj.kt)
-    - utils > ConstantsObj > NEWSAPIORG_APIKEY
-3. Prepare the Android Virtual Device or real device
-4. Build and deploy the app module
+2. Prepare the Android Virtual Device or real device
+3. Build and deploy the app module
 
 ## Code Design & Structure
 This project is using MVVM design pattern. The project directory consist of 4 directories:

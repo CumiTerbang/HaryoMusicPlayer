@@ -7,16 +7,25 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <TextView
-            android:visibility="gone"
             android:id="@+id/found_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="@dimen/padding_8"
-            android:text="@string/found_label"/>
+            android:text="@string/found_label"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/welcome"
+            android:gravity="center"
+            android:textSize="@dimen/textsize_item"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/padding_32"
+            android:text="@string/welcome" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/newslist_recycler_view"

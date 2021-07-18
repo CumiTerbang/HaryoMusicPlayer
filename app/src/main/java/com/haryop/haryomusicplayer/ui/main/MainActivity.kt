@@ -1,8 +1,10 @@
 package com.haryop.haryomusicplayer.ui.main
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
@@ -12,8 +14,14 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.haryop.haryomusicplayer.R
 import com.haryop.haryomusicplayer.databinding.ActivityMainBinding
+import com.haryop.haryomusicplayer.ui.AboutActivity
 import com.haryop.synpulsefrontendchallenge.utils.BaseActivityBinding
+import com.haryop.synpulsefrontendchallenge.utils.comingSoon
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class MainActivity : BaseActivityBinding<ActivityMainBinding>(), Toolbar.OnMenuItemClickListener {
@@ -45,6 +53,18 @@ class MainActivity : BaseActivityBinding<ActivityMainBinding>(), Toolbar.OnMenuI
             navController.popBackStack()
         }
 
+        navController.addOnDestinationChangedListener { controller, destination, arguments ->
+            blackscreen.visibility = View.GONE
+            mainToolbar.menu.findItem(R.id.action_search)?.collapseActionView()
+
+            if (destination.id == R.id.musicListFragment) {
+                mainToolbar.subtitle = ""
+                isLastFragment = true
+            } else {
+                isLastFragment = false
+            }
+        }
+
         mainToolbar.menu.findItem(R.id.action_search)
             ?.setOnActionExpandListener(object : MenuItem.OnActionExpandListener {
                 override fun onMenuItemActionExpand(item: MenuItem?): Boolean {
@@ -63,9 +83,12 @@ class MainActivity : BaseActivityBinding<ActivityMainBinding>(), Toolbar.OnMenuI
 
     override fun onMenuItemClick(item: MenuItem?): Boolean {
         when (item?.getItemId()) {
+            R.id.action_about -> {
+                openAbout()
+            }
             R.id.action_search -> {
                 var searchView: SearchView = item.actionView as SearchView
-                searchView.queryHint = "search articles..."
+                searchView.queryHint = "search track, artist, or  album"
                 searchView.setOnQueryTextListener(object :
                     SearchView.OnQueryTextListener {
                     override fun onQueryTextSubmit(query: String?): Boolean {
@@ -88,6 +111,11 @@ class MainActivity : BaseActivityBinding<ActivityMainBinding>(), Toolbar.OnMenuI
         return false
     }
 
+    fun openAbout() {
+        var intent = Intent(this@MainActivity, AboutActivity::class.java)
+        startActivity(intent)
+    }
+
     fun reSearchPage(_query: String) = with(binding) {
         var mainFragment: MusicListFragment = getForegroundFragment() as MusicListFragment
         mainFragment.onReSearch(_query)
@@ -100,11 +128,27 @@ class MainActivity : BaseActivityBinding<ActivityMainBinding>(), Toolbar.OnMenuI
             .getFragments().get(0)
     }
 
+    var isLastFragment: Boolean = false
+    private var doubleBackToExitPressedOnce = false
+    val activityScope = CoroutineScope(Dispatchers.Main)
     override fun onBackPressed() {
         if (binding.blackscreen.visibility == View.VISIBLE) {
             binding.blackscreen.visibility = View.GONE
             binding.mainToolbar.menu.findItem(R.id.action_search)?.collapseActionView()
-        }else{
+        } else if (isLastFragment) {
+            if (doubleBackToExitPressedOnce) {
+                super.onBackPressed()
+                return
+            }
+
+            this.doubleBackToExitPressedOnce = true
+            Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show()
+
+            activityScope.launch {
+                delay(2000)
+                doubleBackToExitPressedOnce = false
+            }
+        } else {
             super.onBackPressed()
         }
     }
