@@ -13,7 +13,9 @@ import androidx.navigation.ui.setupWithNavController
 import com.haryop.haryomusicplayer.R
 import com.haryop.haryomusicplayer.databinding.ActivityMainBinding
 import com.haryop.synpulsefrontendchallenge.utils.BaseActivityBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : BaseActivityBinding<ActivityMainBinding>(), Toolbar.OnMenuItemClickListener {
 
     override val bindingInflater: (LayoutInflater) -> ActivityMainBinding
@@ -87,7 +89,7 @@ class MainActivity : BaseActivityBinding<ActivityMainBinding>(), Toolbar.OnMenuI
     }
 
     fun reSearchPage(_query: String) = with(binding) {
-        var mainFragment: MainFragment = getForegroundFragment() as MainFragment
+        var mainFragment: MusicListFragment = getForegroundFragment() as MusicListFragment
         mainFragment.onReSearch(_query)
     }
 

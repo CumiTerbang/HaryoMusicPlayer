@@ -56,10 +56,22 @@
                 android:text="@string/unknown"
                 android:textSize="@dimen/textsize_itemsub" />
 
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/isStream"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:lines="1"
+                android:textStyle="bold"
+                android:textColor="@color/teal_700"
+                android:text="@string/streamable"
+                android:textSize="@dimen/textsize_itemsub" />
+
         </LinearLayout>
 
         <ImageView
-            android:id="@+id/item_play"
+            android:id="@+id/is_playing"
             android:visibility="invisible"
             android:layout_width="@dimen/tab_height"
             android:layout_height="@dimen/tab_height"

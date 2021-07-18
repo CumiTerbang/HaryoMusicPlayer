@@ -33,6 +33,7 @@ data class ContentEntity(
     @SerializedName("country") val country: String = "",
     @SerializedName("currency") val currency: String = "",
     @SerializedName("primaryGenreName") val primaryGenreName: String = "",
-    @SerializedName("isStreamable") val isStreamable: Boolean = false
+    @SerializedName("isStreamable") val isStreamable: Boolean = false,
+    var isPlaying: Boolean = false
 )
 

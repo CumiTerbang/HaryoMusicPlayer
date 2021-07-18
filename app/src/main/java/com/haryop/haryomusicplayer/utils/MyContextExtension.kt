@@ -49,6 +49,24 @@ fun Activity.comingSoon(msg: String) {
     comingSoon(this, msg)
 }
 
+fun Context.showToast(activity: Activity, msg: String = "") {
+    val toast = Toast.makeText(activity, msg, Toast.LENGTH_SHORT)
+//    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) {
+//        val v = toast.view!!.findViewById<View>(R.id.message) as TextView
+//        if (v != null) v.gravity = Gravity.CENTER
+//    }
+    toast.show()
+
+}
+
+fun Fragment.showToast(msg: String) {
+    activity?.showToast(requireActivity(), msg)
+}
+
+fun Activity.showToast(msg: String) {
+    showToast(this, msg)
+}
+
 fun Context.setDate(publishedAt: String): String {
     var date: String = publishedAt
     try {
@@ -73,9 +91,9 @@ fun Context.setDate(publishedAt: String): String {
     return date
 }
 
-fun Context.setImageGlide(imgUrl:String?, view:View, imageViewTarget:ImageView){
+fun Context.setImageGlide(imgUrl: String?, view: View, imageViewTarget: ImageView) {
     com.bumptech.glide.Glide.with(view)
-        .load(imgUrl?:"")
+        .load(imgUrl ?: "")
         .placeholder(R.mipmap.ic_launcher_round)
         .into(imageViewTarget)
 

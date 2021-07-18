@@ -12,7 +12,7 @@ class MusicListAdapter(private val listener: MusicItemListener) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     interface MusicItemListener {
-        fun onClickedItem(previewUrl: String, isStreamable:Boolean)
+        fun onClickedItem(previewUrl: String, isStreamable:Boolean, isPlaying:Boolean)
     }
 
     private val items = ArrayList<Any>()
