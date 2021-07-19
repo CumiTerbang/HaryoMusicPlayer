@@ -4,7 +4,7 @@
 
 an android app demo to search your favorite music tracks, artists and albums using API from  [iTunes affiliate API](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api)
 
-this is my approach for Fita/Kuncie Telkomsel Technical Test by making an android application based on the requirement as the solution
+this is my approach for [Fita](https://www.myfita.com/)/[Kuncie](https://www.kuncie.com/) Telkomsel Technical Test by making an android application based on the requirement as the solution
 
 Click [here](https://drive.google.com/file/d/17NFtjAtwm5G8Pc26ZhVRboN2BwoAMX0C/view?usp=sharing) to download the app
 

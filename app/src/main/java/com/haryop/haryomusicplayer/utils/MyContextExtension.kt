@@ -3,17 +3,14 @@ package com.haryop.synpulsefrontendchallenge.utils
 
 import android.app.Activity
 import android.content.Context
-import android.os.Build
-import android.view.Gravity
+import android.net.ConnectivityManager
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.bumptech.glide.Glide
 import com.haryop.haryomusicplayer.R
-import java.lang.Exception
+import java.net.InetAddress
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -99,3 +96,19 @@ fun Context.setImageGlide(imgUrl: String?, view: View, imageViewTarget: ImageVie
 
 }
 
+fun Context.isInternetAvailable(): Boolean {
+    return try {
+        val ipAddr: InetAddress = InetAddress.getByName("google.com")
+        //You can replace it with your name
+        !ipAddr.equals("")
+    } catch (e: Exception) {
+        false
+    }
+}
+
+fun Context.isNetworkAvailable(): Boolean {
+    val connectivityManager =
+        getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+    return connectivityManager.activeNetworkInfo != null && connectivityManager.activeNetworkInfo!!
+        .isConnected
+}

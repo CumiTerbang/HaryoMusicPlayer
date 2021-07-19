@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.core.os.bundleOf
 import androidx.fragment.app.add
 import androidx.fragment.app.commit
@@ -17,6 +18,7 @@ import com.haryop.haryomusicplayer.ui.PlayerFragment
 import com.haryop.mynewsportal.utils.Resource
 import com.haryop.synpulsefrontendchallenge.ui.companylist.MusicListAdapter
 import com.haryop.synpulsefrontendchallenge.utils.BaseFragmentBinding
+import com.haryop.synpulsefrontendchallenge.utils.isNetworkAvailable
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
@@ -160,5 +162,37 @@ class MusicListFragment : BaseFragmentBinding<FragmentMainBinding>(),
     override fun onDestroy() {
         super.onDestroy()
         stopPlayer()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        checkInternet(viewbinding.root)
+    }
+
+    fun checkInternet(view: View)=with(viewbinding) {
+        if (requireContext().isNetworkAvailable() == false) {
+            onInternetUnavailable(view)
+            welcome.text = "No Internet\nPlease connect to your internet connection"
+        }else{
+            welcome.text = resources.getText(R.string.welcome)
+        }
+    }
+
+    fun onInternetUnavailable(view: View) {
+
+        //Instantiate builder variable
+        val builder = AlertDialog.Builder(view.context)
+
+        // set title
+        builder.setTitle("No Internet")
+
+        //set content area
+        builder.setMessage("Please connect to your internet connection")
+
+        builder.setPositiveButton("OK") { dialog, id ->
+
+        }
+
+        builder.show()
     }
 }
