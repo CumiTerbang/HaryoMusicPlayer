@@ -4,7 +4,7 @@
 
 an android app demo to search your favorite music tracks, artists and albums using API from  [iTunes affiliate API](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api)
 
-this is my approach for [Fita](https://www.myfita.com/)/[Kuncie](https://www.kuncie.com/) Telkomsel Technical Test by making an android application based on the requirement as the solution
+this is my approach for Telkomsel's [Fita](https://www.myfita.com/)/[Kuncie](https://www.kuncie.com/) Technical Test by making an android application based on the requirement as the solution
 
 Click [here](https://drive.google.com/file/d/17NFtjAtwm5G8Pc26ZhVRboN2BwoAMX0C/view?usp=sharing) to download the app
 
@@ -32,6 +32,8 @@ Click [here](https://drive.google.com/file/d/17NFtjAtwm5G8Pc26ZhVRboN2BwoAMX0C/v
 ## Code Design & Structure
 This project is using MVVM design pattern. The project directory consist of 4 directories:
 1. **data**: The M (Model) in MVVM. Where we perform data operations.
-2. **di**: Dependency Injection directory with the help of Hilt.
-3. **ui**: User Interface directory for Fragments and ViewModels helping to display data to the user.
+2. **di**: Dependency Injection directory with the help of [Hilt](https://dagger.dev/hilt/) v2.35.
+3. **ui**: User Interface directory for Activities, Fragments and ViewModels helping to display data to the user.
 4. **utils**: Urilities directory for helper classes and functions.
+
+Library that used to play the audio file: [ExoPlayer](https://github.com/google/ExoPlayer) v2.14.1

@@ -21,10 +21,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:lines="1"
                 android:padding="@dimen/padding_8"
                 android:textColor="@color/white"
-                android:textSize="@dimen/textsize_itemsub" />
+                android:textSize="@dimen/textsize_itemsub"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:freezesText="true"/>
 
             <ProgressBar
                 android:id="@+id/progress_bar"
