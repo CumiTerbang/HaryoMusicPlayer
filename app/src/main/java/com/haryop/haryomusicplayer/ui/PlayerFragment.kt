@@ -8,7 +8,7 @@ import com.google.android.exoplayer2.MediaItem
 import com.google.android.exoplayer2.Player
 import com.google.android.exoplayer2.SimpleExoPlayer
 import com.haryop.haryomusicplayer.databinding.FragmentPlayerBinding
-import com.haryop.synpulsefrontendchallenge.utils.BaseFragmentBinding
+import com.haryop.haryomusicplayer.utils.BaseFragmentBinding
 
 
 class PlayerFragment : BaseFragmentBinding<FragmentPlayerBinding>() {

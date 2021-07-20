@@ -4,7 +4,7 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.haryop.haryomusicplayer.data.entities.ContentEntity
 import com.haryop.haryomusicplayer.databinding.ItemMusicLayoutBinding
-import com.haryop.synpulsefrontendchallenge.utils.setImageGlide
+import com.haryop.haryomusicplayer.utils.setImageGlide
 
 class MusicItemViewHolder(
     private val itemBinding: ItemMusicLayoutBinding,

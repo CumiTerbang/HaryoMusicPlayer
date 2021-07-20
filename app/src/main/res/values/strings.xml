@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Haryo Music Player</string>
-    <string name="search">Search</string>
+    <string name="action_search_label">Search</string>
+    <string name="search_hint">search track, artist, or  album</string>
     <string name="about">About</string>
     <string name="unknown">Unknown</string>
     <string name="streamable">Preview Available</string>

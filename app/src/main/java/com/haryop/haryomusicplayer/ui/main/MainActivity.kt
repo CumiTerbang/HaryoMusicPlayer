@@ -15,7 +15,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.haryop.haryomusicplayer.R
 import com.haryop.haryomusicplayer.databinding.ActivityMainBinding
 import com.haryop.haryomusicplayer.ui.AboutActivity
-import com.haryop.synpulsefrontendchallenge.utils.BaseActivityBinding
+import com.haryop.haryomusicplayer.utils.BaseActivityBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -87,7 +87,7 @@ class MainActivity : BaseActivityBinding<ActivityMainBinding>(), Toolbar.OnMenuI
             }
             R.id.action_search -> {
                 var searchView: SearchView = item.actionView as SearchView
-                searchView.queryHint = "search track, artist, or  album"
+                searchView.queryHint = getString(R.string.search_hint)
                 searchView.setOnQueryTextListener(object :
                     SearchView.OnQueryTextListener {
                     override fun onQueryTextSubmit(query: String?): Boolean {

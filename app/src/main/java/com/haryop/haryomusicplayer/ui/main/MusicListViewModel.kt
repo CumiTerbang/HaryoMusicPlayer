@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.switchMap
 import com.haryop.haryomusicplayer.data.entities.ContentEntity
 import com.haryop.haryomusicplayer.data.repository.DataRepository
-import com.haryop.mynewsportal.utils.Resource
+import com.haryop.haryomusicplayer.utils.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

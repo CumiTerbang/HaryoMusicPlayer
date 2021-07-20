@@ -1,4 +1,4 @@
-package com.haryop.synpulsefrontendchallenge.utils
+package com.haryop.haryomusicplayer.utils
 
 import android.graphics.Color
 import android.os.Bundle

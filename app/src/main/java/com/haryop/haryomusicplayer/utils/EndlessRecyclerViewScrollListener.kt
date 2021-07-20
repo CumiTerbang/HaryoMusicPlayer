@@ -1,4 +1,4 @@
-package com.haryop.mynewsportal.utils
+package com.haryop.haryomusicplayer.utils
 
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager

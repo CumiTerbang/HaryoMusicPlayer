@@ -1,7 +1,7 @@
 package com.haryop.haryomusicplayer.data.remote
 
 
-import com.haryop.mynewsportal.utils.Resource
+import com.haryop.haryomusicplayer.utils.Resource
 import retrofit2.Response
 import timber.log.Timber
 

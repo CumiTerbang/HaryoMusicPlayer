@@ -5,9 +5,9 @@ import android.view.MenuItem
 import android.view.View
 import com.haryop.haryomusicplayer.R
 import com.haryop.haryomusicplayer.databinding.ActivityAboutBinding
-import com.haryop.synpulsefrontendchallenge.utils.BaseActivityBinding
+import com.haryop.haryomusicplayer.utils.BaseActivityBinding
 
-class AboutActivity:BaseActivityBinding<ActivityAboutBinding>() {
+class AboutActivity: BaseActivityBinding<ActivityAboutBinding>() {
     override val bindingInflater: (LayoutInflater) -> ActivityAboutBinding
         get() = ActivityAboutBinding::inflate
 

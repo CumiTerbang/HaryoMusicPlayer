@@ -1,4 +1,4 @@
-package com.haryop.synpulsefrontendchallenge.utils
+package com.haryop.haryomusicplayer.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater

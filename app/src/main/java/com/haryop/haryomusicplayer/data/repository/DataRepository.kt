@@ -6,7 +6,7 @@ import com.haryop.haryomusicplayer.data.entities.ContentEntities
 import com.haryop.haryomusicplayer.data.entities.ContentEntity
 import com.haryop.haryomusicplayer.data.remote.ApiServices
 import com.haryop.haryomusicplayer.data.remote.RemoteDataSource
-import com.haryop.mynewsportal.utils.Resource
+import com.haryop.haryomusicplayer.utils.Resource
 import kotlinx.coroutines.Dispatchers
 import javax.inject.Inject
 

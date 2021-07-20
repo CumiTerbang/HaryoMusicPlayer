@@ -5,7 +5,7 @@ import com.google.gson.GsonBuilder
 import com.haryop.haryomusicplayer.data.remote.ApiServices
 import com.haryop.haryomusicplayer.data.remote.RemoteDataSource
 import com.haryop.haryomusicplayer.data.repository.DataRepository
-import com.haryop.mynewsportal.utils.ConstantsObj
+import com.haryop.haryomusicplayer.ui.ConstantsObj
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

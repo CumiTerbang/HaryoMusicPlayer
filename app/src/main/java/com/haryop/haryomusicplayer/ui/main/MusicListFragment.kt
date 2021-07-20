@@ -1,10 +1,10 @@
 package com.haryop.haryomusicplayer.ui.main
 
+import android.app.AlertDialog
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.core.os.bundleOf
 import androidx.fragment.app.add
 import androidx.fragment.app.commit
@@ -15,12 +15,13 @@ import com.haryop.haryomusicplayer.R
 import com.haryop.haryomusicplayer.data.entities.ContentEntity
 import com.haryop.haryomusicplayer.databinding.FragmentMainBinding
 import com.haryop.haryomusicplayer.ui.PlayerFragment
-import com.haryop.mynewsportal.utils.Resource
+import com.haryop.haryomusicplayer.utils.BaseFragmentBinding
+import com.haryop.haryomusicplayer.utils.Resource
+import com.haryop.haryomusicplayer.utils.isNetworkAvailable
 import com.haryop.synpulsefrontendchallenge.ui.companylist.MusicListAdapter
-import com.haryop.synpulsefrontendchallenge.utils.BaseFragmentBinding
-import com.haryop.synpulsefrontendchallenge.utils.isNetworkAvailable
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
+
 
 @AndroidEntryPoint
 class MusicListFragment : BaseFragmentBinding<FragmentMainBinding>(),
