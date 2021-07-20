@@ -4,7 +4,7 @@
 
 an android app demo to search your favorite music tracks, artists and albums using API from  [iTunes affiliate API](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api)
 
-this is my approach for Telkomsel's [Fita](https://www.myfita.com/)/[Kuncie](https://www.kuncie.com/) Technical Test by making an android application based on the requirement as the solution
+this is my approach for Telkomsel's [Fita](https://www.myfita.com/)/[Kuncie](https://www.kuncie.com/) Front End Coding Challenge by making an android application based on the requirement as the solution
 
 Click [here](https://drive.google.com/file/d/17NFtjAtwm5G8Pc26ZhVRboN2BwoAMX0C/view?usp=sharing) to download the app
 
@@ -37,3 +37,5 @@ This project is using MVVM design pattern. The project directory consist of 4 di
 4. **utils**: Urilities directory for helper classes and functions.
 
 Library that used to play the audio file: [ExoPlayer](https://github.com/google/ExoPlayer) v2.14.1
+
+click [here](https://github.com/CumiTerbang/HaryoMusicPlayer/tree/master/app/src/androidTest/java/com/haryop/haryomusicplayer) to explore more about this app testing section 
