@@ -38,4 +38,4 @@ This project is using MVVM design pattern. The project directory consist of 4 di
 
 Library that used to play the audio file: [ExoPlayer](https://github.com/google/ExoPlayer) v2.14.1
 
-click [here](https://github.com/CumiTerbang/HaryoMusicPlayer/tree/master/app/src/androidTest/java/com/haryop/haryomusicplayer) to explore more about this app testing section 
+click [here (ui test)](https://github.com/CumiTerbang/HaryoMusicPlayer/tree/master/app/src/androidTest/java/com/haryop/haryomusicplayer) and [here (unit test)](https://github.com/CumiTerbang/HaryoMusicPlayer/tree/master/app/src/test/java/com/haryop/haryomusicplayer) to explore more about this app testing section 
